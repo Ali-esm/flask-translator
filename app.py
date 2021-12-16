@@ -6,6 +6,7 @@ app = Flask(__name__)
 # index route
 app.add_url_rule('/', view_func=index)
 
+# translate route
 app.add_url_rule('/translate/<target_lang>/', 'translate', translate_func, methods=['GET', 'POST'],
                  defaults={'from_lang': 'auto', 'provider': 'google'})
 app.add_url_rule('/translate/<target_lang>/<from_lang>/', 'translate', translate_func, methods=['GET', 'POST'],
