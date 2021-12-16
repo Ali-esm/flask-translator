@@ -12,4 +12,6 @@ def translate_func(target_lang, from_lang, provider):
         translate_text = getattr(ts, provider)(text, to_language=target_lang, from_language=from_lang)
         return f"{translate_text}"
     else:
-        pass
+        text = request.form['text']
+        print(text)
+        return getattr(ts, provider)(text, to_language=target_lang, from_language=from_lang)
